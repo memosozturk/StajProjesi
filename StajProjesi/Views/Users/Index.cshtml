@@ -1,0 +1,54 @@
+﻿@model IEnumerable<StajProjesi.Models.Model.Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Index</h3>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.UserUnvan.UnvanAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Proje.ProjeAdi)
+        </th>
+        <th></th>
+    </tr>
+     
+@foreach (var item in Model) {
+<tr>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.Unvanid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Eposta)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Proje.ProjeAdi)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Userid }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Userid }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Userid })
+    </td>
+</tr>
+}
+
+</table>
