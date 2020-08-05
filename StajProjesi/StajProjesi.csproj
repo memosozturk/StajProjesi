@@ -842,6 +842,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContext\StajDBContext.cs" />
+    <Compile Include="Models\Model\AdminInfo.cs" />
     <Compile Include="Models\Model\Proje.cs" />
     <Compile Include="Models\Model\Unvan.cs" />
     <Compile Include="Models\Model\Users.cs" />
