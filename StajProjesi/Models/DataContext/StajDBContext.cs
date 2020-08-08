@@ -11,7 +11,8 @@ namespace StajProjesi.Models.DataContext
     {
         public StajDBContext():base("StajDB")
         { 
-        } 
+        }
+        public DbSet<Admin> Admin { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<Unvan> Unvan { get; set; }
         public DbSet<Proje> Proje { get; set; }

@@ -1,9 +1,14 @@
-﻿using StajProjesi.Models.DataContext;
+﻿using Microsoft.EntityFrameworkCore;
+using StajProjesi.Models.DataContext;
+using StajProjesi.Models.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace StajProjesi.Controllers
 {
@@ -19,7 +24,18 @@ namespace StajProjesi.Controllers
         // GET: Proje/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            }
+            Proje proje = db.Proje.Find(id);
+            if (proje==null)
+            {
+                return HttpNotFound();
+
+            }   
+            return View(proje);
         }
 
         // GET: Proje/Create
@@ -30,62 +46,86 @@ namespace StajProjesi.Controllers
 
         // POST: Proje/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Create(Proje proje)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                db.Proje.Add(proje);
+                db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
-            catch
-            {
-                return View();
-            }
+            
+            return View(proje);
         }
 
         // GET: Proje/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var proje = db.Proje.Where(x => x.Projeid == id).SingleOrDefault();
+            return View(proje);
         }
 
         // POST: Proje/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Edit(int id, Proje proje)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                
+                var p = db.Proje.Where(x => x.Projeid == id).SingleOrDefault();
 
+                p.Projeid = proje.Projeid;
+                p.ProjeAdi = proje.ProjeAdi;
+                p.ProjeAciklama = proje.ProjeAciklama;
+
+                  db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            
+            return View();
         }
 
         // GET: Proje/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            }
+            Proje proje = db.Proje.Find(id);
+            if (proje==null)
+            {
+                return HttpNotFound();
+
+            }
+            return View(proje);
         }
 
         // POST: Proje/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost,ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
+            Proje proje = db.Proje.Find(id);
+            db.Proje.Remove(proje);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                // TODO: Add delete logic here
+                db.Dispose();
 
-                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            base.Dispose(disposing);
         }
     }
 }

@@ -1,0 +1,36 @@
+﻿@model StajProjesi.Models.Model.Proje
+
+<div>
+    <h4>Proje</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Projeid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Projeid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjeAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjeAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjeAciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Projeid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

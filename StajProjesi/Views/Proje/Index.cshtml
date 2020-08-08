@@ -15,7 +15,7 @@
         <th>
 
             @Html.DisplayNameFor(model => model.Projeid)
-            @*@Html.DisplayNameFor(model => model.Users.Eposta)*@
+           
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ProjeAdi)
@@ -31,14 +31,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Projeid)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Users.Eposta)
-        </td>*@
+     
         <td>
             @Html.DisplayFor(modelItem => item.ProjeAdi)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProjeAciklama)
+            @Html.Raw( item.ProjeAciklama)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Projeid }) |

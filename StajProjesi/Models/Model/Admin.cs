@@ -12,7 +12,7 @@ namespace StajProjesi.Models.Model
 {
     [Table("Admin")]
    
- public class AdminInfo
+ public class Admin
  {
         [Key]
         public int Adminid { get; set; }
