@@ -1,7 +1,9 @@
 ﻿using StajProjesi.Models.DataContext;
+using StajProjesi.Models.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,13 +15,27 @@ namespace StajProjesi.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            db.Configuration.LazyLoadingEnabled = false;
+            return View(db.Users.Include("UserUnvan").ToList());
+            
         }
 
         // GET: Users/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            }
+            Users users = db.Users.Find(id);
+            if (users == null)
+            {
+                return HttpNotFound();
+
+            }
+            db.Configuration.LazyLoadingEnabled = false;
+            return View(users);
         }
 
         // GET: Users/Create
@@ -30,62 +46,91 @@ namespace StajProjesi.Controllers
 
         // POST: Users/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Create(Users users)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (ModelState.IsValid)
             {
-                return View();
+                db.Users.Add(users);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
             }
+
+            return View(users);
         }
 
         // GET: Users/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var users = db.Users.Where(x => x.Userid == id).SingleOrDefault();
+            return View(users);
+           
         }
 
         // POST: Users/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Edit(int id, Users users)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
 
+                var u = db.Users.Where(x => x.Userid == id).SingleOrDefault();
+
+                u.Userid = users.Userid;
+                u.Eposta = users.Eposta;
+                u.Unvanid = users.Unvanid;
+                u.UserUnvan = users.UserUnvan;
+
+
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View();
+            
         }
 
         // GET: Users/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            }
+            Users users = db.Users.Find(id);
+            if (users == null)
+            {
+                return HttpNotFound();
+
+            }
+            return View(users);
         }
 
         // POST: Users/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Users users = db.Users.Find(id);
+            db.Users.Remove(users);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
-                return RedirectToAction("Index");
-            }
-            catch
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
+
             }
+            base.Dispose(disposing);
         }
     }
 }

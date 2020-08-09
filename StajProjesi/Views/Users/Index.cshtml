@@ -12,19 +12,18 @@
 </p>
 <table class="table">
     <tr>
-       
+
+        <th>
+            @Html.DisplayNameFor(model => model.Userid)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.UserUnvan.UnvanAdi)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Eposta)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Sifre)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.Proje.ProjeAdi)
-        </th>
+
+        
         <th></th>
     </tr>
      
@@ -32,16 +31,14 @@
 <tr>
     
     <td>
-        @Html.DisplayFor(modelItem => item.Unvanid)
+        @Html.DisplayFor(modelItem => item.Userid)
     </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserUnvan.UnvanAdi)
+    </td>
+   
     <td>
         @Html.DisplayFor(modelItem => item.Eposta)
-    </td>
-    @*<td>
-            @Html.DisplayFor(modelItem => item.Sifre)
-        </td>*@
-    <td>
-        @Html.DisplayFor(modelItem => item.Proje.ProjeAdi)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Userid }) |

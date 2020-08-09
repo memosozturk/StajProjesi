@@ -1184,6 +1184,10 @@
     <Compile Include="Migrations\202008081032585_abc.designer.cs">
       <DependentUpon>202008081032585_abc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008081205508_abc1.cs" />
+    <Compile Include="Migrations\202008081205508_abc1.designer.cs">
+      <DependentUpon>202008081205508_abc1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContext\StajDBContext.cs" />
     <Compile Include="Models\Model\Admin.cs" />
@@ -1208,6 +1212,10 @@
     <Content Include="Views\Proje\Delete.cshtml" />
     <Content Include="Views\Proje\Details.cshtml" />
     <Content Include="Views\Proje\Create.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1234,6 +1242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008081032585_abc.resx">
       <DependentUpon>202008081032585_abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008081205508_abc1.resx">
+      <DependentUpon>202008081205508_abc1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

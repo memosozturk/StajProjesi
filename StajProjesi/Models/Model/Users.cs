@@ -25,7 +25,7 @@ namespace StajProjesi.Models.Model
         public Unvan UserUnvan { get; set; }
 
      
-        public virtual  Proje Proje { get; set; }
+       
     }
     
    

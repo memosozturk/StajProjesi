@@ -13,8 +13,8 @@ namespace StajProjesi.Models.Model
     [Table("Proje")]
     public class Proje
     {
-      // [Key]
-       [ForeignKey("Users")]
+       [Key]
+       
        [DisplayName("Proje id")]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Projeid { get; set; }
