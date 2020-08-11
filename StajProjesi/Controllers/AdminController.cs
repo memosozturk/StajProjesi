@@ -1,9 +1,7 @@
 ﻿using StajProjesi.Models.DataContext;
 using StajProjesi.Models.Model;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
 
 namespace StajProjesi.Controllers
@@ -24,15 +22,17 @@ namespace StajProjesi.Controllers
         [HttpPost]
         public ActionResult Login(Users users)
         {
-            
-            var login = db.Users.Where(x => x.Eposta == users.Eposta).SingleOrDefault();
+
+            var login = db.Users.Where(x => x.Eposta == users.Eposta && x.Sifre == users.Sifre ).SingleOrDefault();
             if (login != null)
             {
                 if (login.Eposta == users.Eposta && login.Sifre == users.Sifre)
                 {
+                    
                     Session["userid"] = login.Userid;
                     Session["Eposta"] = login.Eposta;
-                    return RedirectToAction("Index", "Admin");
+                    Session["Unvanid"]=login.Unvanid;
+                    return RedirectToAction("Index","Admin");
 
                 }
             }

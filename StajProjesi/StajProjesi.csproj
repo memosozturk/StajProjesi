@@ -1166,8 +1166,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PoweredUserController.cs" />
     <Compile Include="Controllers\ProjeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1192,6 +1193,7 @@
     <Compile Include="Models\DataContext\StajDBContext.cs" />
     <Compile Include="Models\Model\Admin.cs" />
     <Compile Include="Models\Model\Proje.cs" />
+    <Compile Include="Models\Model\Task.cs" />
     <Compile Include="Models\Model\Unvan.cs" />
     <Compile Include="Models\Model\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1226,6 +1228,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\PoweredUser\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
