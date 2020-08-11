@@ -86,6 +86,7 @@ namespace StajProjesi.Controllers
                 u.Eposta = users.Eposta;
                 u.Unvanid = users.Unvanid;
                 u.UserUnvan = users.UserUnvan;
+                u.UserAd = users.UserAd;
 
 
                 db.SaveChanges();

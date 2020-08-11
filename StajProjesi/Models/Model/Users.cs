@@ -16,7 +16,7 @@ namespace StajProjesi.Models.Model
         
         [Key]
         public int Userid { get; set; }
-        [Required,StringLength(50,ErrorMessage ="Uzunluk en fazla 50 karakter olabilir.")]
+        [StringLength(50,ErrorMessage ="Uzunluk en fazla 50 karakter olabilir.")]
         public String UserAd { get; set; }
         [Required, StringLength(50, ErrorMessage = "Uzunluk en fazla 50 karakter olabilir.")]
         public String Eposta { get; set; }
