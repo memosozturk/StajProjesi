@@ -26,7 +26,7 @@ namespace StajProjesi.Models.Model
         [DisplayName("Proje Açıklama")]
         public String ProjeAciklama { get; set; }
         public Users Users { get; set; }
-
+        public virtual ICollection<Task> Tasks { get; set; }
 
 
 

@@ -1197,6 +1197,22 @@
     <Compile Include="Migrations\202008110740293_init.designer.cs">
       <DependentUpon>202008110740293_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008110814438_init1.cs" />
+    <Compile Include="Migrations\202008110814438_init1.designer.cs">
+      <DependentUpon>202008110814438_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008110818282_init2.cs" />
+    <Compile Include="Migrations\202008110818282_init2.designer.cs">
+      <DependentUpon>202008110818282_init2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008110821543_init3.cs" />
+    <Compile Include="Migrations\202008110821543_init3.designer.cs">
+      <DependentUpon>202008110821543_init3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008110823490_init4.cs" />
+    <Compile Include="Migrations\202008110823490_init4.designer.cs">
+      <DependentUpon>202008110823490_init4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContext\StajDBContext.cs" />
     <Compile Include="Models\Model\Admin.cs" />
@@ -1263,6 +1279,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008110740293_init.resx">
       <DependentUpon>202008110740293_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008110814438_init1.resx">
+      <DependentUpon>202008110814438_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008110818282_init2.resx">
+      <DependentUpon>202008110818282_init2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008110821543_init3.resx">
+      <DependentUpon>202008110821543_init3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008110823490_init4.resx">
+      <DependentUpon>202008110823490_init4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

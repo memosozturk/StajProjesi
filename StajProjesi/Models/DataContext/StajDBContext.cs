@@ -17,6 +17,7 @@ namespace StajProjesi.Models.DataContext
         public DbSet<Unvan> Unvan { get; set; }
         public DbSet<Proje> Proje { get; set; }
 
-      
+        public DbSet<Task> Task { get; set; }
+
     }
 }

@@ -20,5 +20,6 @@ namespace StajProjesi.Models.Model
         [DisplayName("Task Teslim Tarihi")]
         public  DateTime TaskTeslimTarihi { get; set; }
         public Users users { get; set; }
+        public int Projeid { get; set; }
     }
 }
