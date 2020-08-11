@@ -22,7 +22,8 @@ namespace StajProjesi.Controllers
 
         // GET: Users/Details/5
         public ActionResult Details(int id)
-        {
+        { db.Configuration.LazyLoadingEnabled = false;
+            db.Users.Include("UserUnvan");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -34,7 +35,7 @@ namespace StajProjesi.Controllers
                 return HttpNotFound();
 
             }
-            db.Configuration.LazyLoadingEnabled = false;
+           
             return View(users);
         }
 
