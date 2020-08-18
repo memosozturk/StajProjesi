@@ -37,10 +37,17 @@ namespace StajProjesi.Controllers
             }   
             return View(proje);
         }
-
-        // GET: Proje/Create
+        [HttpGet]
         public ActionResult Create()
         {
+            List<SelectListItem> degerler = (from x in db.Users.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.UserAd,
+                                                 Value = x.Userid.ToString()
+                                             }).ToList();
+
+            ViewData["Uservb"] = degerler;
             return View();
         }
 
@@ -50,15 +57,13 @@ namespace StajProjesi.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Proje proje)
         {
-            if (ModelState.IsValid)
-            {
-                db.Proje.Add(proje);
-                db.SaveChanges();
-                return RedirectToAction("Index");
 
-            }
-            
-            return View(proje);
+            //var a = db.Proje.Where(x => x.Users.Userid == proje.Users.Userid).FirstOrDefault();
+            //proje.Users.UserAd = a.ToString();
+            //db.Proje.Add(proje);
+            //db.SaveChanges();
+            //return RedirectToAction("Index");
+            return View();
         }
 
         // GET: Proje/Edit/5

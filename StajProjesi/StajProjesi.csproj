@@ -1174,53 +1174,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007290730385_denemew.cs" />
-    <Compile Include="Migrations\202007290730385_denemew.designer.cs">
-      <DependentUpon>202007290730385_denemew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008050806547_Adminekleme.cs" />
-    <Compile Include="Migrations\202008050806547_Adminekleme.designer.cs">
-      <DependentUpon>202008050806547_Adminekleme.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008081032585_abc.cs" />
-    <Compile Include="Migrations\202008081032585_abc.designer.cs">
-      <DependentUpon>202008081032585_abc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008081205508_abc1.cs" />
-    <Compile Include="Migrations\202008081205508_abc1.designer.cs">
-      <DependentUpon>202008081205508_abc1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008110731441_task.cs" />
-    <Compile Include="Migrations\202008110731441_task.designer.cs">
-      <DependentUpon>202008110731441_task.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008110740293_init.cs" />
-    <Compile Include="Migrations\202008110740293_init.designer.cs">
-      <DependentUpon>202008110740293_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008110814438_init1.cs" />
-    <Compile Include="Migrations\202008110814438_init1.designer.cs">
-      <DependentUpon>202008110814438_init1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008110818282_init2.cs" />
-    <Compile Include="Migrations\202008110818282_init2.designer.cs">
-      <DependentUpon>202008110818282_init2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008110821543_init3.cs" />
-    <Compile Include="Migrations\202008110821543_init3.designer.cs">
-      <DependentUpon>202008110821543_init3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008110823490_init4.cs" />
-    <Compile Include="Migrations\202008110823490_init4.designer.cs">
-      <DependentUpon>202008110823490_init4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008111046158_init5.cs" />
-    <Compile Include="Migrations\202008111046158_init5.designer.cs">
-      <DependentUpon>202008111046158_init5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008111048328_init6.cs" />
-    <Compile Include="Migrations\202008111048328_init6.designer.cs">
-      <DependentUpon>202008111048328_init6.cs</DependentUpon>
+    <Compile Include="Migrations\202008180922352_ab.cs" />
+    <Compile Include="Migrations\202008180922352_ab.designer.cs">
+      <DependentUpon>202008180922352_ab.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContext\StajDBContext.cs" />
@@ -1277,41 +1233,8 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007290730385_denemew.resx">
-      <DependentUpon>202007290730385_denemew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008050806547_Adminekleme.resx">
-      <DependentUpon>202008050806547_Adminekleme.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008081032585_abc.resx">
-      <DependentUpon>202008081032585_abc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008081205508_abc1.resx">
-      <DependentUpon>202008081205508_abc1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008110731441_task.resx">
-      <DependentUpon>202008110731441_task.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008110740293_init.resx">
-      <DependentUpon>202008110740293_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008110814438_init1.resx">
-      <DependentUpon>202008110814438_init1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008110818282_init2.resx">
-      <DependentUpon>202008110818282_init2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008110821543_init3.resx">
-      <DependentUpon>202008110821543_init3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008110823490_init4.resx">
-      <DependentUpon>202008110823490_init4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008111046158_init5.resx">
-      <DependentUpon>202008111046158_init5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008111048328_init6.resx">
-      <DependentUpon>202008111048328_init6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008180922352_ab.resx">
+      <DependentUpon>202008180922352_ab.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

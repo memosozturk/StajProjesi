@@ -25,7 +25,7 @@ namespace StajProjesi.Models.Model
         [StringLength(500, ErrorMessage = "Uzunluk en fazla 500 karakter olabilir.")]
         [DisplayName("Proje Açıklama")]
         public String ProjeAciklama { get; set; }
-        public Users Users { get; set; }
+        public virtual ICollection<Users> Userss { get; set; }
         public virtual ICollection<Task> Tasks { get; set; }
 
 

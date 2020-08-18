@@ -25,9 +25,11 @@ namespace StajProjesi.Models.Model
        
         public int? Unvanid { get; set; }
         public Unvan UserUnvan { get; set; }
+        public int? Projeid { get; set; }
+        public Proje userproje { get; set; }
 
-     
-       
+
+
     }
     
    
