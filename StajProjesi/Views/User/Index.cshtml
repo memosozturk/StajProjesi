@@ -1,0 +1,46 @@
+﻿@model IEnumerable<StajProjesi.Models.Model.Users>
+
+@{ 
+    String id=Session["Userid"].ToString();
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserUnvan.UnvanAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    @item.Userid= Session["Userid"].ToString(); 
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserUnvan.UnvanAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Userid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Userid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Userid })
+        </td>
+    </tr>
+}
+
+</table>

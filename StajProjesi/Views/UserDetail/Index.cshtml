@@ -1,0 +1,44 @@
+﻿@model StajProjesi.Models.Model.Users
+
+<div>
+    <h4>Kullanıcı ayrıntıları</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserUnvan.UnvanAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserUnvan.UnvanAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Userid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

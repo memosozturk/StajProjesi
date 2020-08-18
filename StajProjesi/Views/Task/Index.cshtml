@@ -1,0 +1,45 @@
+﻿@model IEnumerable<StajProjesi.Models.Model.Task>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskTeslimTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Projeid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskTeslimTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Projeid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Taskid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Taskid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Taskid })
+        </td>
+    </tr>
+}
+
+</table>

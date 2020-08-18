@@ -32,9 +32,18 @@ namespace StajProjesi.Controllers
                     Session["userid"] = login.Userid;
                     Session["Eposta"] = login.Eposta;
                     Session["Unvanid"]=login.Unvanid;
-                    return RedirectToAction("Index","Admin");
+                    Session["UserAd"] = login.UserAd;
+                    if (login.Unvanid.ToString()=="1" || login.Unvanid.ToString() == "2")
+                    {
 
+                    
+                    return RedirectToAction("Index","Admin");
+}
                 }
+                
+                
+                    return RedirectToAction("Index","User");
+                
             }
             ViewBag.Uyari = "Kullanıcı Adı veya Şifre Yanlış";
             return View(users);

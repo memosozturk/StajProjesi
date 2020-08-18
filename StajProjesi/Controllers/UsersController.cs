@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace StajProjesi.Controllers
 {
@@ -24,6 +26,7 @@ namespace StajProjesi.Controllers
         public ActionResult Details(int id)
         { db.Configuration.LazyLoadingEnabled = false;
             db.Users.Include("UserUnvan");
+            var degerler = db.Users.Include("UserUnvan").ToList();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -36,15 +39,27 @@ namespace StajProjesi.Controllers
 
             }
            
-            return View(users);
+            return View(degerler);
         }
 
-        // GET: Users/Create
+        //// GET: Users/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+        [HttpGet]
         public ActionResult Create()
         {
+            List<SelectListItem> degerler = (from x in db.Unvan.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.UnvanAdi,
+                                                 Value=x.Unvanid.ToString()
+                                             }).ToList();
+            
+            ViewData["dgr"] = degerler;
             return View();
         }
-
         // POST: Users/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -52,15 +67,14 @@ namespace StajProjesi.Controllers
         public ActionResult Create(Users users)
         {
 
-            if (ModelState.IsValid)
-            {
-                db.Users.Add(users);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+            var u = db.Unvan.Where(x => x.Unvanid == users.UserUnvan.Unvanid).FirstOrDefault();
+            users.UserUnvan = u;
+            db.Users.Add(users);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
-            }
+           
 
-            return View(users);
         }
 
         // GET: Users/Edit/5

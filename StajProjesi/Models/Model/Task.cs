@@ -12,14 +12,17 @@ namespace StajProjesi.Models.Model
     public class Task
     {
         [Key]
+
         public int Taskid { get; set; }
         [DisplayName("Task Başlık")]
         public String TaskBaslik { get; set; }
         [DisplayName("Task Açıklama")]
         public String TaskAciklama { get; set; }
         [DisplayName("Task Teslim Tarihi")]
-        public  DateTime TaskTeslimTarihi { get; set; }
-        public Users users { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime TaskTeslimTarihi { get; set; }
+
+       // public Users users { get; set; }
         public int Projeid { get; set; }
     }
 }

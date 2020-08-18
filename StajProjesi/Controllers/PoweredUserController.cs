@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StajProjesi.Models.DataContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,13 @@ namespace StajProjesi.Controllers
 {
     public class PoweredUserController : Controller
     {
+        StajDBContext db = new StajDBContext();
         // GET: PoweredUser
         public ActionResult Index()
         {
-            return View();
+
+            var sorgu = db.Admin.ToList();
+            return View(sorgu);
         }
 
         // GET: PoweredUser/Details/5

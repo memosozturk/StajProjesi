@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StajProjesi.Models.DataContext;
+using StajProjesi.Models.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,13 @@ namespace StajProjesi.Controllers
 {
     public class UserController : Controller
     {
+        StajDBContext db = new StajDBContext();
         // GET: User
         public ActionResult Index()
         {
-            return View();
+            db.Configuration.LazyLoadingEnabled = false;
+            return View(db.Users.Include("UserUnvan").ToList());
+
         }
 
         // GET: User/Details/5
