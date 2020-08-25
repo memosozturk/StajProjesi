@@ -1,4 +1,4 @@
-﻿
+﻿@model StajProjesi.Models.Model.Users
 @{
     Layout = null;
 }
@@ -23,6 +23,7 @@
     <!--external css-->
     <!-- font icon -->
     <link href="~/Content/AdminLayout/css/elegant-icons-style.css" rel="stylesheet" />
+
     <link href="~/Content/AdminLayout/css/font-awesome.css" rel="stylesheet" />
     <!-- Custom styles -->
     <link href="~/Content/AdminLayout/css/style.css" rel="stylesheet">
@@ -45,24 +46,27 @@
 
     <div class="container">
 
-        <form class="login-form" method="post" action="/Admin/Login/">
+
+        <form  class="login-form" method="post" action="/Admin/Login/">
             <div class="login-wrap">
                 <p>@ViewBag.Uyari</p>
                 <p class="login-img"><i class="icon_lock_alt"></i></p>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="icon_profile"></i></span>
-                    <input type="text" class="form-control" name="Eposta" placeholder="Eposta" autofocus>
+                    <input type="text" class="form-control "required name="Eposta" placeholder="Eposta" autofocus id="Eposta" onkeyup="kontrol()" >
+                    @Html.ValidationMessageFor(model => model.Eposta, "", new { @class = "text-danger  " })
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                    <input type="password" name="Sifre" class="form-control"  placeholder="Sifre">
+                    <input type="password" name="Sifre" class="form-control "required placeholder="Sifre">
+                    @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger " })
                 </div>
-               
+
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Giriş Yap</button>
-               
+
             </div>
         </form>
-      
+
         <div class="text-right">
             <div class="credits">
                 <!--
@@ -75,8 +79,32 @@
             </div>
         </div>
     </div>
+    @*<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/Scripts/script-custom-validator.js"></script>*@
 
+    <script type="text/javascript">
+function ePostaKont(eposta)
+{
+    var duzenli = new RegExp(/^[a-z]{1}[\d\w\.-]+@@[\d\w-]{3,}\.[\w]{2,3}(\.\w{2})?$/);
 
+    return duzenli.test(eposta);
+}
+
+function kontrol()
+{
+    var giris = document.getElementById('Eposta');
+
+    if(ePostaKont(giris.value))
+        giris.style.backgroundColor = "white";
+    else
+        giris.style.backgroundColor = "#F0D0D0";
+}
+    </script>
 </body>
+
 
 </html>

@@ -10,48 +10,59 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
+<table id="example3" class="table table-striped dt-responsive nowrap display" style="width:100%">
+    <thead>
+        <tr>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Userid)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserUnvan.UnvanAdi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserAd)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Eposta)
-        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Userid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserUnvan.UnvanAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjeUser.ProjeAdi)
+            </th>
+            <th></th>
 
 
-        <th></th>
-    </tr>
-     
-@foreach (var item in Model) {
-<tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Userid)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UserUnvan.UnvanAdi)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UserAd)
-    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Userid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserUnvan.UnvanAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserAd)
+                </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Eposta)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Userid }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Userid }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Userid })
-    </td>
-</tr>
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.Eposta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjeUser.ProjeAdi)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Userid }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Userid }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Userid })
+                </td>
+            </tr>
+        }
+        </tbody>
 
 </table>

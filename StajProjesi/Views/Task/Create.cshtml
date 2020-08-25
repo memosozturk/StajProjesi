@@ -11,7 +11,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TaskBaslik, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskBaslik, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.TaskBaslik, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.TaskBaslik, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TaskAciklama, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskAciklama, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.TaskAciklama, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.TaskAciklama, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -30,7 +30,7 @@
 
 
             <div class="col-md-10">
-                <input class="form-control" type="date" value="" id="TaskTeslimTarihi">
+                <input class="form-control" type="date" value="" id="TaskTeslimTarihi" required>
 
                 @*@Html.EditorFor(model => model.TaskTeslimTarihi, new { htmlAttributes = new { @class = "form-control date" } })*@
                 @Html.ValidationMessageFor(model => model.TaskTeslimTarihi, "", new { @class = "text-danger" })
@@ -40,7 +40,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Projeid, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Projeid, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.Projeid, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.proje.Projeid, (List<SelectListItem>)ViewBag.dgr, new { htmlAttributes = new { @class = "form-control dropdown", required = "required" } })
                 @Html.ValidationMessageFor(model => model.Projeid, "", new { @class = "text-danger" })
             </div>
         </div>

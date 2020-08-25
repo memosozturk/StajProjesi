@@ -15,7 +15,8 @@ namespace StajProjesi.Controllers
         // GET: Task
         public ActionResult Index()
         {
-            return View(db.Task.ToList());
+            var sorgu = db.Task.Include("proje").ToList();
+            return View(sorgu);
         }
 
         // GET: Task/Details/5
@@ -38,6 +39,14 @@ namespace StajProjesi.Controllers
         // GET: Task/Create
         public ActionResult Create()
         {
+            List<SelectListItem> degerler = (from x in db.Proje.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.ProjeAdi,
+                                                 Value = x.Projeid.ToString()
+                                             }).ToList();
+
+            ViewData["dgr"] = degerler;
             return View();
         }
 
@@ -47,6 +56,8 @@ namespace StajProjesi.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Task task)
         {
+            var u = db.Proje.Where(x => x.Projeid == task.proje.Projeid).FirstOrDefault();
+            task.proje = u;
             if (ModelState.IsValid)
             {
                 db.Task.Add(task);

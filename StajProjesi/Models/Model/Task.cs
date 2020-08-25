@@ -24,5 +24,6 @@ namespace StajProjesi.Models.Model
 
        // public Users users { get; set; }
         public int Projeid { get; set; }
+        public Proje proje { get; set; }
     }
 }

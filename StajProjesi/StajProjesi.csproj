@@ -51,6 +51,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.1.3\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -975,6 +978,7 @@
     <Content Include="Content\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Content\ckeditor\styles.js" />
     <Content Include="Content\ckeditor\vendor\promise.js" />
+    <Content Include="Content\mailcheck.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -1084,6 +1088,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\script-custom-validator.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
@@ -1174,9 +1179,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008180922352_ab.cs" />
-    <Compile Include="Migrations\202008180922352_ab.designer.cs">
-      <DependentUpon>202008180922352_ab.cs</DependentUpon>
+    <Compile Include="Migrations\202008190755082_test2.cs" />
+    <Compile Include="Migrations\202008190755082_test2.designer.cs">
+      <DependentUpon>202008190755082_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008190828467_test3.cs" />
+    <Compile Include="Migrations\202008190828467_test3.designer.cs">
+      <DependentUpon>202008190828467_test3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008190832525_test4.cs" />
+    <Compile Include="Migrations\202008190832525_test4.designer.cs">
+      <DependentUpon>202008190832525_test4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008190918079_test5.cs" />
+    <Compile Include="Migrations\202008190918079_test5.designer.cs">
+      <DependentUpon>202008190918079_test5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008250648362_add.cs" />
+    <Compile Include="Migrations\202008250648362_add.designer.cs">
+      <DependentUpon>202008250648362_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContext\StajDBContext.cs" />
@@ -1214,6 +1235,7 @@
     <Content Include="Views\Task\Delete.cshtml" />
     <Content Include="Views\UserDetail\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Users\Export.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1233,8 +1255,20 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008180922352_ab.resx">
-      <DependentUpon>202008180922352_ab.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008190755082_test2.resx">
+      <DependentUpon>202008190755082_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008190828467_test3.resx">
+      <DependentUpon>202008190828467_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008190832525_test4.resx">
+      <DependentUpon>202008190832525_test4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008190918079_test5.resx">
+      <DependentUpon>202008190918079_test5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008250648362_add.resx">
+      <DependentUpon>202008250648362_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

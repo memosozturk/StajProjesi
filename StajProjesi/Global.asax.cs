@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
+
 namespace StajProjesi
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -13,6 +14,9 @@ namespace StajProjesi
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ModelValidatorProviders.Providers.Clear();
+         
+            
         }
     }
 }

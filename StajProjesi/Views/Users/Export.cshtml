@@ -1,0 +1,58 @@
+﻿@model IEnumerable<StajProjesi.Models.Model.Users>
+
+@{
+    ViewBag.Title = "Export";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Export</h2>
+
+
+    <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th class="th-sm">
+                    User id
+                </th>
+                <th class="th-sm">
+                    Unvan
+                </th>
+                <th class="th-sm">
+                    Kullanıcı Adı
+                </th>
+                <th class="th-sm">
+                    Eposta
+                </th>
+                <th class="th-sm">
+                    Proje Adı
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @item.Userid
+                    </td>
+                    <td>
+                        @item.UserUnvan.UnvanAdi
+                    </td>
+                    <td>
+                        @item.UserAd
+                    </td>
+
+                    <td>
+                        @item.Eposta</td>
+                    <td>
+                        @item.ProjeUser.ProjeAdi
+                    </td>
+                </tr>
+
+            }
+            </tbody>
+    </table>
+
+

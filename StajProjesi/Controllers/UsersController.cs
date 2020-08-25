@@ -18,7 +18,8 @@ namespace StajProjesi.Controllers
         public ActionResult Index()
         {
             db.Configuration.LazyLoadingEnabled = false;
-            return View(db.Users.Include("UserUnvan").ToList());
+            var sorgu = db.Users.Include("UserUnvan").Include("ProjeUser").ToList();
+            return View(sorgu);
             
         }
 
@@ -73,7 +74,7 @@ namespace StajProjesi.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
 
-           
+
 
         }
 
@@ -81,6 +82,27 @@ namespace StajProjesi.Controllers
         public ActionResult Edit(int id)
         {
             var users = db.Users.Where(x => x.Userid == id).SingleOrDefault();
+            List<SelectListItem> degerler = (from x in db.Unvan.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.UnvanAdi,
+                                                 Value = x.Unvanid.ToString()
+                                             }).ToList();
+
+            ViewData["dgr"] = degerler;
+
+            
+            List<SelectListItem> degerler2 = (from x in db.Proje.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.ProjeAdi,
+                                                 Value = x.Projeid.ToString()
+                                             }).ToList();
+
+            ViewData["dgr2"] = degerler2;
+
+
+
             return View(users);
            
         }
@@ -101,7 +123,9 @@ namespace StajProjesi.Controllers
                 u.Unvanid = users.Unvanid;
                 u.UserUnvan = users.UserUnvan;
                 u.UserAd = users.UserAd;
-
+                u.Projeid = users.Projeid;
+                u.ProjeUser = users.ProjeUser;
+               
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -139,6 +163,20 @@ namespace StajProjesi.Controllers
             return RedirectToAction("Index");
 
         }
+        [HttpGet]
+        public ActionResult Export()
+        {
+            db.Configuration.LazyLoadingEnabled = false;
+            var sorgu = db.Users.Include("UserUnvan").Include("ProjeUser").ToList();
+            return View(sorgu);
+        }
+        
+        [HttpPost]
+        public ActionResult ExportTo()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

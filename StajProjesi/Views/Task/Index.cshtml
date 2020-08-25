@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.TaskTeslimTarihi)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Projeid)
+            @Html.DisplayNameFor(model => model.proje.ProjeAdi)
         </th>
         <th></th>
     </tr>
@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.TaskTeslimTarihi)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Projeid)
+            @Html.DisplayFor(modelItem => item.proje.ProjeAdi)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Taskid }) |

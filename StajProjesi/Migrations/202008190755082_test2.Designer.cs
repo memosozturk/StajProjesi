@@ -7,13 +7,13 @@ namespace StajProjesi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ab : IMigrationMetadata
+    public sealed partial class test2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ab));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(test2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008180922352_ab"; }
+            get { return "202008190755082_test2"; }
         }
         
         string IMigrationMetadata.Source
