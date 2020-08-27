@@ -588,6 +588,7 @@
     <Content Include="Content\AdminLayout\img\user.jpg" />
     <Content Include="Content\AdminLayout\img\user22.png" />
     <Content Include="Content\AdminLayout\index.html" />
+    <Content Include="Content\AdminLayout\js\jquery-3.5.1.js" />
     <Content Include="Content\AdminLayout\js\additional-methods.min.js" />
     <Content Include="Content\AdminLayout\js\bootstrap-colorpicker.js" />
     <Content Include="Content\AdminLayout\js\bootstrap-datepicker.js" />
@@ -1171,6 +1172,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GuvenlikController.cs" />
     <Compile Include="Controllers\PoweredUserController.cs" />
     <Compile Include="Controllers\ProjeController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
@@ -1219,7 +1221,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Proje\Index.cshtml" />
-    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Guvenlik\Login.cshtml" />
     <Content Include="Views\Proje\Edit.cshtml" />
     <Content Include="Views\Proje\Delete.cshtml" />
     <Content Include="Views\Proje\Details.cshtml" />

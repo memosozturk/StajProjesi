@@ -11,10 +11,12 @@ using System.Web.Mvc;
 
 namespace StajProjesi.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         StajDBContext db = new StajDBContext();
         // GET: Users
+        [Authorize]
         public ActionResult Index()
         {
             db.Configuration.LazyLoadingEnabled = false;

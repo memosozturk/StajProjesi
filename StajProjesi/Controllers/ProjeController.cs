@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace StajProjesi.Controllers
 {
+    [Authorize]
     public class ProjeController : Controller
     {
         StajDBContext db = new StajDBContext();
