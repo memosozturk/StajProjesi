@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Web;
 namespace StajProjesi.Models.Model
 {
     [Table("Unvan")]
-    public class Unvan
+    public class Unvan:IdentityRole
     {
         [Key]
         public int Unvanid { get; set; }

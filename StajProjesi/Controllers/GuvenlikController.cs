@@ -28,30 +28,30 @@ namespace StajProjesi.Controllers
 
             }
 
-            var login = db.Users.Where(x => x.Eposta == users.Eposta && x.Sifre == users.Sifre).SingleOrDefault();
-            if (login != null)
-            {
-                if (login.Eposta == users.Eposta && login.Sifre == users.Sifre)
-                {
+            //var login = db.Users.Where(x => x.Eposta == users.Eposta && x.Sifre == users.Sifre).SingleOrDefault();
+            //if (login != null)
+            //{
+            //    if (login.Eposta == users.Eposta && login.Sifre == users.Sifre)
+            //    {
 
-                    Session["userid"] = login.Userid;
-                    Session["Eposta"] = login.Eposta;
-                    Session["Unvanid"] = login.Unvanid;
-                    Session["UserAd"] = login.UserAd;
-                    if (login.Unvanid.ToString() == "1")
-                    {
+            //        Session["userid"] = login.Userid;
+            //        Session["Eposta"] = login.Eposta;
+            //        Session["Unvanid"] = login.Unvanid;
+            //        Session["UserAd"] = login.UserAd;
+            //        if (login.Unvanid.ToString() == "1")
+            //        {
 
 
-                        return RedirectToAction("Index", "Admin");
-                    }
-                    else if (login.Unvanid.ToString() == "2")
-                    {
-                        return RedirectToAction("Index", "PoweredUser");
-                    }
-                }
-                return RedirectToAction("Index", "User");
+            //            return RedirectToAction("Index", "Admin");
+            //        }
+            //        else if (login.Unvanid.ToString() == "2")
+            //        {
+            //            return RedirectToAction("Index", "PoweredUser");
+            //        }
+            //    }
+            //    return RedirectToAction("Index", "User");
 
-            }
+            //}
             ViewBag.Uyari = "Kullanıcı Adı veya Şifre Yanlış";
             return View(users);
         }

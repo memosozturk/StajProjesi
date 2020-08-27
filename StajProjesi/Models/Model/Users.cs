@@ -5,13 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace StajProjesi.Models.Model
 {
     [Table("Users")]
-    public class Users
+    public class Users:IdentityUser
     {
         
         [Key]
